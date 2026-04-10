@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from model import predict
+from src.api.model import predict
 
 #Instancia de la clase
 app = FastAPI()
