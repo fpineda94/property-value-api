@@ -8,3 +8,4 @@ joblib==1.5.3
 pydantic==2.12.5
 seaborn==0.13.2
 matplotlib==3.10.8
+mlflow==3.11.1
