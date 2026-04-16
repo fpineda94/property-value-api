@@ -1,0 +1,29 @@
+
+name: MLOps_CI_Pipeline
+
+on:
+  push:
+    branches: [ "main" ] # Se activa cada vez que hagas un push a main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 1. Descargar el código
+      uses: actions/checkout@v3
+
+    - name: 2. Configurar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: 3. Instalar dependencias
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: 4. Correr pruebas (Pytest)
+      # Este comando es el que ya te dio "1 passed" en tu Mac
+      run: |
+        python -m pytest
